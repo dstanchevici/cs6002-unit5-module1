@@ -1,0 +1,17 @@
+
+public class TestCopy {
+
+    public static void main (String[] argv)
+    {
+	ImageTool imTool = new ImageTool ();
+	String filename = "redcirclesmall.png";
+	int[][][] pixels = imTool.imageFileToPixels (filename);
+	int[][][] pixels2 = copy (pixels);
+	imTool.showImage (pixels, filename);
+	imTool.showImage (pixels2, "copy");
+
+    }
+
+    // WRITE YOUR CODE HERE:
+
+}
