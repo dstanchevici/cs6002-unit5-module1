@@ -146,7 +146,7 @@ public class Border2 {
 
 	//  Tweaking what constitutes red for redshapessmall.png
 	return
-	    pixels[i][j][1] >= 200 &&
+	    pixels[i][j][1] >= 250 &&
 	    pixels[i][j][2] < 247 &&
 	    pixels[i][j][3] < 247;
     }
