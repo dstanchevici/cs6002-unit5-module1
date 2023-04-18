@@ -1,0 +1,79 @@
+import java.util.*;
+
+public class Border2 {
+
+    public static void main (String[] argv)
+    {
+	ImageTool imTool = new ImageTool ();
+	String filename = "redcirclesmall.png";
+	//String filename = "redcircle.png";
+	//String filename = "redshapessmall.png";
+	int[][][] pixels = imTool.imageFileToPixels (filename);
+
+	int[][][] pixels2 = copy (pixels);
+	makeBorder (pixels2);
+
+	imTool.showImage (pixels, filename);
+	imTool.showImage (pixels2, "with border");
+    }
+
+    static void makeBorder (int[][][] pixels)
+    {
+	ArrayList<Coord> borderPixels = findBorderPixels (pixels);
+	// After the border pixels are identified, set each of them to black.
+	for (int i=0; i<borderPixels.size(); i++) {
+	    Coord c = borderPixels.get (i);
+	    pixels[c.row][c.col][1] = 0;
+	    pixels[c.row][c.col][2] = 0;
+	    pixels[c.row][c.col][3] = 0;
+	}
+    }
+
+    static ArrayList<Coord> findBorderPixels (int[][][] pixels)
+    {
+	ArrayList<Coord> borderPixels = new ArrayList<>();
+
+	// WRITE YOUR CODE HERE.
+
+	return borderPixels;
+    }
+
+
+    static boolean hasWhiteNeighbor (int[][][] pixels, int i, int j)
+    {
+	// INSERT YOUR CODE HERE
+    }
+
+    static ArrayList<Coord> getNeighbors (int[][][] pixels, int i, int j)
+    {
+	ArrayList<Coord> neighbors = new ArrayList<>();
+
+	// INSERT YOUR CODE HERE
+
+	return neighbors;
+    }
+
+
+    static boolean isRed (int[][][] pixels, int i, int j)
+    {
+	// WRITE YOUR CODE HERE
+
+    }
+
+    static boolean isWhite (int[][][] pixels, int i, int j)
+    {
+	// WRITE YOUR CODE HERE
+
+    }
+
+    static int[][][] copy (int[][][] pixels)
+    {
+	// INSERT YOUR CODE HERE to make a full copy of the array pixels.
+
+    }
+
+    static void print (int[][][] pixels, int color)
+    {
+	// INSERT YOUR CODE HERE
+    }
+}
