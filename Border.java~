@@ -1,0 +1,86 @@
+import java.util.*;
+
+public class Border {
+
+    public static void main (String[] argv)
+    {
+	ImageTool imTool = new ImageTool ();
+	String filename = "redcirclesmall.png";
+	//String filename = "redcircle.png";
+	//String filename = "redshapessmall.png";
+	int[][][] pixels = imTool.imageFileToPixels (filename);
+
+	int[][][] pixels2 = copy (pixels);
+	makeBorder (pixels2);
+
+	imTool.showImage (pixels, filename);
+	imTool.showImage (pixels2, "with border");
+    }
+
+    static void makeBorder (int[][][] pixels)
+    {
+	int m = pixels.length;
+	int n = pixels[0].length;
+
+	// INSERT YOUR CODE HERE
+    }
+
+    static boolean hasWhiteNeighbor (int[][][] pixels, int i, int j)
+    {
+	// INSERT YOUR CODE HERE
+    }
+
+    static ArrayList<Coord> getNeighbors (int[][][] pixels, int i, int j)
+    {
+	ArrayList<Coord> neighbors = new ArrayList<>();
+
+	// INSERT YOUR CODE HERE
+
+	return neighbors;
+    }
+
+
+    static boolean isRed (int[][][] pixels, int i, int j)
+    {
+	// WRITE YOUR CODE HERE
+
+    }
+
+    static boolean isWhite (int[][][] pixels, int i, int j)
+    {
+	// WRITE YOUR CODE HERE
+
+    }
+
+    static int[][][] copy (int[][][] pixels)
+    {
+	int[][][] pixelsCopy = new int[pixels.length][pixels[0].length][4];
+
+	for (int i=0; i<pixels.length; i++) {
+	    for (int j=0; j<pixels[0].length; j++) {
+		for (int k=0; k<4; k++) {
+		    pixelsCopy[i][j][k] = pixels[i][j][k];
+		}
+	    }
+	}
+	
+	return pixelsCopy;
+
+    }
+
+    static void print (int[][][] pixels, int color)
+    {
+	int m = pixels.length;
+	int n = pixels[0].length;
+	System.out.println ("Image: #rows=" + m + " #cols=" + n + " color=" + color);
+
+        for (int i=0; i<pixels.length; i++) {
+	    for (int j=0; j<pixels[i].length; j++) {
+		System.out.printf (" %3d", pixels[i][j][color]);
+	    }
+	    System.out.println ();
+	}
+
+    } // end-print
+    
+} // end-Border

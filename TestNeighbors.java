@@ -36,6 +36,7 @@ public class TestNeighbors {
 	    System.out.print (" (" + c.row + "," + c.col + ")");
 	}
 	System.out.println ();
+
     }
 
     static ArrayList<Coord> getNeighbors (int[][][] pixels, int i, int j)
